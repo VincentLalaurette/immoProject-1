@@ -1,8 +1,6 @@
 const express = require ('express');
 const bodyParser = require('body-parser')
 
-
-
 var { mongoose } = require('./db/mongoose');
 var { Appart } = require('./db/models/Appart');
 
@@ -16,6 +14,7 @@ app.listen(PORT, () =>{
   console.log('server back connected');
 })
 
+
 app.post('/apparts', (req, res) => {
   var newAppart = new Appart(req.body);
   newAppart.save()
@@ -23,13 +22,8 @@ app.post('/apparts', (req, res) => {
 (e)=>{res.status(400).send(e)});
 })
 
+
+
 app.get('/apparts', (req, res)=>{
-  Appart.find()
-  .then(
-    (apparts)=>{
-      res.send({apparts})
-  },
-  (e)=>{
-    res.status(400).send(e)
-  })
+  res.send('yo');
 });
