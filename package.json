@@ -11,7 +11,7 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "react": "npm run start --prefix react",
-    "start": "concurrently \"npm run dev\" \" npm run react \""
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
