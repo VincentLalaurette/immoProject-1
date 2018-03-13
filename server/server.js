@@ -25,5 +25,10 @@ app.post('/apparts', (req, res) => {
 
 
 app.get('/apparts', (req, res)=>{
-  res.send('yo');
+  Appart.find()
+  .then((docs)=>{
+    res.send(docs);
+  }, (err) => {
+    res.status(400).send('error : ', err);
+  })
 });
